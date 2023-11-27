@@ -3,27 +3,27 @@ const Schema = mongoose.Schema;
 
 const EmployeeSchema = new Schema({
     firstname: {
-        type: String,
-        required: true,
-      },
-      lastname: {
-        type: String,
-        required: true,
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-        lowercase: true,
-      },
-      password: {
-        type: String,
-        required: true,
-      },
-      role:String,
-      records: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Records'
+      type: String,
+      required: true,
+    },
+    lastname: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    role:String,
+    records: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Records'
     }]
 
 });
