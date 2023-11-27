@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./image/back.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    padding:40px;
+  }
+
+  .containerLogin{
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    padding:40px;
+    text-align: center;
+  }
+
+                                             
+  .container h2 {
+    margin-bottom: 20px;
+  }
+
+  .inputStyle{
+    border: 1px solid #1E263A ;
+    border-radius: 8px;
+    background-color: white;
+    width: 450px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    padding:5px;
+    margin-top: 10px;
+  }
+
+
+
+  .inputStyle input{
+    border: none;
+    font-size: 15px;
+    width: 90%;
+    outline: none;
+    color: #1E263A;
+  }
+
+  .icon{
+    margin-top: 10px ;
+    size:22px;
+    color: #1E263A;
+    margin-right:5px;
+  }
+
+  .iconPass{
+    margin-left:9px;
+    margin-top: 10px ;
+    size:22px;
+    color: #1E263A;
+    margin-right:5px;
+  }
+
+  .buttonStyle {
+    border: 1px solid #1E263A;
+    background-color: #1E263A;
+    border-radius: 8px;
+    color : white;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-top: 12px;
+    width:460px;
+  }
+
+  .buttonRetour{
+    color: #1E263A;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .buttonRetour text{
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+
+  .containerLogin text{
+    font-size:10px;
+  }
+
+  .iconLogin {
+    width: 100px;
+    height:100px;
+  }
+
+  .title{
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .Stitle{
+    font-size: 15px;
+  }
+
+  .linkStyle{
+    margin-top: 8px;
+    text-decoration: none;
+    color: #1E263A;
+  }
+
+  .linkStyle text {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .linkStyle:hover {
+    color: gray;
+  }
+
+  .errorStyle{
+    font-weight: bold;
+    font-size: 11px;
+    color: rgb(249, 27, 27);
+  }
+
+  
+
+
