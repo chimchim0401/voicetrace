@@ -4,7 +4,7 @@ import FindUser from '../components/FindUser'
 const Home = () => {
   return (
     <div className="App">
-     <FindUser />
+      <FindUser />
     </div>
   )
 }
