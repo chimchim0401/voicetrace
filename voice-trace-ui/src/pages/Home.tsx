@@ -1,9 +1,10 @@
 import React from 'react'
+import FindUser from '../components/FindUser'
 
 const Home = () => {
   return (
-    <div>
-      Home
+    <div className="App">
+     <FindUser />
     </div>
   )
 }

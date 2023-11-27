@@ -1,0 +1,218 @@
+.navbar {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    
+    
+  
+  }
+
+
+.searchBarPosition {
+  margin:  50px auto; 
+  width: 40%;
+  border: 2px solid gray;
+  border-radius: 20px;
+  display:flex ;
+  align-items: center;
+
+
+ 
+}
+.searchBaar {
+  width: 80%;
+  font-size: 19px;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+ 
+  
+
+}
+.iconSearch{
+  font-size: 30px;
+  color: black;
+
+}
+.containerIconSearch{
+  padding: 10px;
+  border:2px solid white;
+  
+  border-radius: 20px;
+  
+  
+
+}
+.containerIconSearchClicked {
+  padding: 7px;
+  border: none;
+  
+  border-radius: 48px;
+  cursor: pointer; 
+  background-color: gray; 
+  transform: scale(1.1); 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+.boxContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: flex-start; 
+}
+
+.card{
+  
+  padding: 20px;
+  background-color: white;
+  box-shadow:0px 0px 5px 2px gray ;
+  width: 220px;
+  height: 190px;
+  border-radius: 10px;
+  display: inline-flex;
+  margin: 45px;
+  justify-content: center; 
+ 
+}
+
+.iconAdd{
+  height: 80px;
+  width:  80px;
+  margin-top: 7px;
+  
+
+ 
+
+}
+.iconDelete{
+  height: 45px !important;
+  width: 23px;
+  color: red;
+  margin-left: 12px;
+  
+ 
+  
+}
+.iconModify{
+  height: 45px !important;
+  width: 24px;
+  color: rgb(33, 163, 55);
+  margin-left: 12px;
+
+ 
+  
+}
+.iconContainer{
+  height: 30px;
+  width: 80px;
+  padding: 2px;
+  border: none;
+  margin-left: 144px;
+  margin-top: 24px;
+  
+
+}
+.infoProfile{
+  height: 130px;
+  width: 170px;
+  display:flex;
+  margin-left: 1227px;
+  background-color: white;
+  border: 2px solid white;
+  margin-top: -35px;
+  justify-content: center; 
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.iconProfile{
+  height: 50px;
+  width: 50px;
+  margin-left: 1292px;
+  margin-top: 12px;
+  display: block;
+ 
+  
+  
+ 
+
+}
+
+.userCompleteName{
+  font-size: 20px;
+  display: block;
+  margin-top: 30px;
+
+  
+
+}
+.containerProfile{
+ 
+
+  background-image: url('/Users/rimmazzine/voicetrace-main/voice-trace-ui/public/assets/accountAvatar.svg');
+  background-size: cover;
+  box-shadow:0px 0px 5px 2px gray ;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  display: inline-flex;
+  margin-top: 4px;
+  justify-content: center; 
+
+}
+
+.containerAccProfile{
+ 
+
+  background-image: url('/Users/rimmazzine/voicetrace-main/voice-trace-ui/public/assets/accountAvatar.svg');
+  background-size: cover;
+  box-shadow:0px 0px 5px 2px gray ;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  display: inline-flex;
+  margin-top: 1px;
+  justify-content: center; 
+
+}
+.completeNameAcc{
+  font-size: 15px;
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+
+  
+
+}
+.emailAcc{
+  font-size: 15px;
+  display: block;
+  margin-top: 8px;
+ 
+  
+
+  
+
+}
+.logoutIcon{
+  height: 27px;
+  width: 27px;
+  margin-top: 8px;
+  display: inline;
+  font-size: 15px;
+  font-weight: bold;
+ 
+  
+
+}
+.logoutContainer {
+  display: flex;
+  align-items: center; 
+  margin-left: 1px;
+}
+
+.logoutIconContainer {
+  margin-left: 10px;
+}
+.logoutTextContainer{
+  margin-left: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
