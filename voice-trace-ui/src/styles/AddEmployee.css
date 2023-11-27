@@ -1,0 +1,56 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column{
+    width: 42%;
+    margin:40px 60px 0px 60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 60vh;
+}
+.form{
+    margin-top: 90px;
+    
+}
+
+.field{
+    width: 350px ;
+    color: black;
+    font-weight: normal;
+    font-size: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    height: 35px;
+    text-indent: 10px;
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   
+    
+}
+.field:focus{
+    border-color: red !important;
+}
+.button{
+    color: white;
+    background-color: green;
+    height: 35px;
+    width:200px; 
+    margin-top: 35px;
+    margin-left: 80px;
+    border-radius: 20px;
+    font-weight: bold;
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+    
+}
+.image{
+    margin-top: 10px ;
+    
+}
