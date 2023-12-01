@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css';
+import '../styles/login.css';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillLock , AiFillEye , AiFillEyeInvisible} from 'react-icons/ai';
 import axios from 'axios';
@@ -42,10 +42,10 @@ const Login: React.FC = () => {
          setId(id);
          setRole(role);
          console.log(token , id , role);
-         if(role=="ADMIN"){
+         if(role==="ADMIN"){
           navigate('/Home');
          } else {
-          navigate('/Home'); 
+          navigate('/employees/add'); 
          }
          
       } else {
@@ -57,6 +57,7 @@ const Login: React.FC = () => {
   }
 
   return (
+    <div className="containerDiv" >
     <div className='containerLogin'>
       <h2>Connexion</h2>
       <div className='inputStyle'>
@@ -81,6 +82,7 @@ const Login: React.FC = () => {
       <Link to="ResetPass" className='linkStyle'><text>Mot de passe oublié ?</text></Link><br/>
       <button className='buttonStyle' onClick={() => { handleLogin(); setShowMsg(true); }}>Se connecter</button>
       {showMsg? <p className='errorStyle'>{msgErreur}</p> :  <p></p> }
+    </div>
     </div>
   );
 };

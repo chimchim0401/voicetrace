@@ -6,10 +6,10 @@ import './App.css';
 import AddEmployee from './pages/AddEmployee';
 import UpdateEmployee from './pages/UpdateEmployee';
 import Home from './pages/Home' ;
-import Login from './components/login'
-import ResetPass from './components/resetPass'
-import VerifyCode from './components/verifyCode'
-import ChangePass from './components/changePass'
+import Login from './pages/login'
+import ResetPass from './pages/resetPass'
+import VerifyCode from './pages/verifyCode'
+import ChangePass from './pages/changePass'
 import { AuthProvider } from './AuthContext';
 
 function App() {
@@ -17,14 +17,13 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/employees/add" element={<AddEmployee />}></Route>
-          <Route path="/employees/update/:id" element={<UpdateEmployee />}></Route>
           <Route path="/" element={<Login />} />
           <Route path="/ResetPass" element={<ResetPass />} />
           <Route path="/VerifyCode" element={<VerifyCode />} />
           <Route path="/ChangePass" element={<ChangePass />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/Home" element={<Home />}></Route>
+          <Route path="/employees/add" element={<AddEmployee />}></Route>
+          <Route path="/employees/update/:id" element={<UpdateEmployee />}></Route>
         </Routes>
       </Router>
     </AuthProvider>

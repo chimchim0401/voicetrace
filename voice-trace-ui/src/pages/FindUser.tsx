@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '/Users/rimmazzine/voicetrace-main/voice-trace-ui/src/styles/FindUser.css';
+import '../styles/FindUser.css';
 import { BsSearch } from 'react-icons/bs';
 import { IoMdAddCircle } from 'react-icons/io'
 import { RiDeleteBin5Line } from 'react-icons/ri';

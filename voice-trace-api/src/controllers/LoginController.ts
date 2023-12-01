@@ -1,10 +1,9 @@
 import express, { Request, Response} from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import UserModel from '../models/UserSchema';
-import EmployeeModel from '../models/EmployeeModel';
+import UserModel from '../models/User';
 import { generateResetCode, sendResetCodeByEmail } from './configEmailSend';
-import CustomSession from '../customSession';
+import CustomSession from '../../customSession';
 
 
 export const login = async (req: Request, res: Response) => {                                                                                                                                                                                                                                         
@@ -28,11 +27,7 @@ export const login = async (req: Request, res: Response) => {
         return res.status(402).json({ message: 'Nom ou mot de passe incorrect.' });
       }
   
-      (req.session as CustomSession).email = email;
-  
-      console.log((req.session as CustomSession).email);
-      console.log('lkjhtfdresdfghjklmù')
-      // Créez un jeton JWT
+
       const token: string = jwt.sign({ userId: user._id }, 'votre_secret', { expiresIn: '1h' });
   
       res.status(200).json({ token, id: user._id, role: user.role });

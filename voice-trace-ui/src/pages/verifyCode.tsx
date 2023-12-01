@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css';
+import '../styles/login.css';
 import { useAuth } from '../AuthContext';
 
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +33,7 @@ function VerifyCode() {
   }
     
   return (
+    <div className="containerDiv" >
     <div className='containerLogin'>
       <p className='title'>Nous avons envoyé un code de vérification</p>
       <p className='title'> à votre adresse e-mail</p>
@@ -48,6 +49,7 @@ function VerifyCode() {
       <button className='buttonStyle' onClick={() => { handleVerifyCode(); setShowMsg(true); }}>Envoyer</button><br />
       
       {showMsg? <p className='errorStyle' >{msgErreur}</p> :  <p></p> }
+    </div>
     </div>
   )
 }

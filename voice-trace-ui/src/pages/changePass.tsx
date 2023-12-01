@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css';
+import '../styles/login.css';
 import { AiFillEye , AiFillEyeInvisible} from 'react-icons/ai';
 import { useAuth } from '../AuthContext';
 import axios from 'axios';

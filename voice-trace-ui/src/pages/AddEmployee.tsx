@@ -35,7 +35,7 @@ const AddEmployee: React.FC = () => {
     try {
       if(EmailValidator(formData.email)){
         setValid(true) ;
-        const response = await axios.get(`http://localhost:5000/employees/checkEmail?email=${formData.email}`);
+        const response = await axios.get(`http://localhost:3000/auth/employees/checkEmail?email=${formData.email}`);
         const { exists } = response.data;
         if(exists){
           toast.error('Employee already exists', {
@@ -45,7 +45,7 @@ const AddEmployee: React.FC = () => {
           
         }else{
           
-          const response = await axios.post('http://localhost:5000/employees/add', formData);
+          const response = await axios.post('http://localhost:3000/auth/employees/add', formData);
 
           console.log(response.data); // Affichez la réponse du serveur
           toast.success('Employee added successfully', {

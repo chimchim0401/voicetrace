@@ -1,5 +1,4 @@
-import React from 'react'
-import FindUser from '../components/FindUser'
+import FindUser from './FindUser'
 
 const Home = () => {
   return (

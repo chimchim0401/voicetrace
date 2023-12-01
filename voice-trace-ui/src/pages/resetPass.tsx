@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './login.css';
+import '../styles/login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
@@ -39,6 +39,7 @@ function ResetPass() {
       }
     }
   return (
+    <div className="containerDiv" >
     <div className='container containerLogin'>
       <p className='title'>Rénitialisez votre mot de passe</p>
       <div className='inputStyle'>
@@ -52,6 +53,7 @@ function ResetPass() {
       <button className='buttonStyle' onClick={() => { handleResetPass(); setShowMsg(true); }}>Rénitialiser votre mot de passe</button><br />
       <Link to="/" className='linkStyle'><text>Retour</text></Link><br/>
       {showMsg? <p className='errorStyle'>{msgErreur}</p> :  <p></p> }
+    </div>
     </div>
   )
 }
