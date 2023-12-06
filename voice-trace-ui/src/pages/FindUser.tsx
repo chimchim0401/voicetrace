@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/FindUser.css';
 import { BsSearch } from 'react-icons/bs';
 import { IoMdAddCircle } from 'react-icons/io'
@@ -8,7 +9,8 @@ import { CgProfile } from 'react-icons/cg';
 import { MdLogout } from 'react-icons/md';
 import axios from 'axios';
 
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -25,7 +27,7 @@ const FindUser: React.FC = () => {
 
   const getEMployees = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/getAllEmployees`);
+      const response = await axios.get(`http://localhost:3000/auth/employees`);
 
       setUsersInfos(response.data);
       return;
@@ -39,7 +41,7 @@ const FindUser: React.FC = () => {
 
   const getSpecificEMployees = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/getAllEmployees`);
+      const response = await axios.get(`http://localhost:3000/auth/employees`);
 
 
       setSpecificUsersInfos(response.data);
@@ -68,7 +70,7 @@ const FindUser: React.FC = () => {
     }
   }
 
-
+  
 
 
 
@@ -81,6 +83,7 @@ const FindUser: React.FC = () => {
 
   for (let i = 0; i < users.length; i++) {
     const user = users[i];
+    console.log(user) ;
     const firstname = user['firstname'];
     const lastname = user['lastname'];
     boxes.push(
@@ -95,8 +98,10 @@ const FindUser: React.FC = () => {
 
 
           <div className='iconContainer'>
+          <Link to ={`/employees/update/${user['_id']}`}>
             <VscEdit className='iconModify' />
-            <RiDeleteBin5Line className='iconDelete' />
+            </Link>
+            <RiDeleteBin5Line className='iconDelete'  onClick={()=> handleDelete(user['_id']) }/>
 
           </div>
 
@@ -110,7 +115,20 @@ const FindUser: React.FC = () => {
       </div>
     );
   }
+  const handleDelete= async (id:string) => {
+    
+    try{
+      const response= axios.delete(`http://localhost:3000/auth/employees/delete/${id}`) ;
+      toast.success('Employee deleted successfully', {
+        position: 'bottom-right',
+        autoClose: 3000, // Ferme l'alerte après 3 secondes
+      });
 
+    }catch(error){
+      
+    }
+  
+  }
 
 
 
@@ -135,8 +153,12 @@ const FindUser: React.FC = () => {
 
 
             <div className='iconContainer'>
-              <VscEdit className='iconModify' />
-              <RiDeleteBin5Line className='iconDelete' />
+              
+            <Link to ={`/employees/update/${specificUser['_id']}`}>
+            <VscEdit className='iconModify' />
+            </Link>
+              
+              <RiDeleteBin5Line className='iconDelete' onClick={()=> handleDelete(specificUser['_id'])} />
 
             </div>
 
@@ -230,8 +252,13 @@ const FindUser: React.FC = () => {
         </>
       )}
 
-
-      <div><IoMdAddCircle className='iconAdd' /></div>
+      <Link to="/employees/add">
+      <div>
+       
+        <IoMdAddCircle className='iconAdd' />
+        
+        </div>
+        </Link>
 
 
 
