@@ -1,7 +1,7 @@
 .containerDiv {
     margin: 0;
     padding: 0;
-    background-image: url("../../public/assets/back.jpg"); 
+    background-image: url("../../public/assets/ai_background.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh; 
