@@ -28,13 +28,13 @@ const Records: React.FC = () => {
     const toast = useToast(); // Initialize useToast hook
     
     const fetchRecords = async () => {
-        const response = await axios.get('http://localhost:5000/records');
+        const response = await axios.get('http://localhost:3000/auth/records');
         const records = response.data;
         // get the employee for each record
         for (let i = 0; i < records.length; i++) {
             const record = records[i];
             const employeeId = record.employee;
-            const employeeResponse = await axios.get(`http://localhost:5000/employees/${employeeId}`);
+            const employeeResponse = await axios.get(`http://localhost:3000/auth/employees/${employeeId}`);
             const employee = employeeResponse.data;
             record.employee = employee;
         }

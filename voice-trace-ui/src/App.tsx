@@ -12,6 +12,9 @@ import VerifyCode from './pages/verifyCode'
 import ChangePass from './pages/changePass'
 import { AuthProvider } from './AuthContext';
 import FindUser from './pages/FindUser';
+import Records from './pages/Records';
+import Report from './pages/Report';
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route path="/employees" element={<FindUser />}></Route>
           <Route path="/employees/add" element={<AddEmployee />}></Route>
           <Route path="/employees/update/:id" element={<UpdateEmployee />}></Route>
+          <Route path="/records" element={<Records />}></Route>
+          <Route path="/report" element={<Report />}></Route>
         </Routes>
       </Router>
     </AuthProvider>

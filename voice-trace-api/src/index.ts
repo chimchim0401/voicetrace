@@ -1,15 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import dotenv from 'dotenv';
 
 import employeeRoutes from './routes/Employee';
 import recordRoutes from './routes/Record';
 import RapportRoutes from './routes/Rapport';
 
-dotenv.config();
 
-const PORT = 5000;
+
+const PORT = 3000;
 const app = express();
 
 app.use(express.json());

@@ -20,6 +20,7 @@ app.use(
 
 
 app.use('/auth', authRoutes);
+
 mongoose.connect('mongodb+srv://root:root@cluster0.j19swfd.mongodb.net/?retryWrites=true&w=majority'
 ).then(()=>{
     console.log('connection done');

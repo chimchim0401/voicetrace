@@ -15,7 +15,7 @@ const Conversation = () => {
 
   const fetchReport = async () => {
     // post req with id in body request to get report
-    const response = await axios.post('http://localhost:5000/reports', { 'id': id });
+    const response = await axios.get('http://localhost:3000/auth/reports');
     setMessages(response.data.Messages);
     setSummary(response.data.Summary);
 
