@@ -1,5 +1,4 @@
 import { AssemblyAI } from 'assemblyai'
-import fs from 'fs'
 import TextSpeech from './text-speecht'
 import {} from 'multer'
 
@@ -12,13 +11,14 @@ const client = new AssemblyAI({
 async function transcribe(url?: string) : Promise<TextSpeech[]> {
 
   // url audio
-  const audio = url ||
+  const audio = `./uploads/${url}` ||
     'https://github.com/AssemblyAI-Examples/' +
     'audio-examples/raw/main/20230607_me_canadian_wildfires.mp3'
 
 
   const transcript = await client
     .transcripts
+    
     .transcribe({
       audio, 
       speaker_labels: true,
