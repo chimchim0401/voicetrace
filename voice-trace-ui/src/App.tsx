@@ -14,6 +14,7 @@ import { AuthProvider } from './AuthContext';
 import FindUser from './pages/FindUser';
 import Records from './pages/Records';
 import Report from './pages/Report';
+import AddRecord from './pages/AddRecord';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/employees/update/:id" element={<UpdateEmployee />}></Route>
           <Route path="/records" element={<Records />}></Route>
           <Route path="/report" element={<Report />}></Route>
+          <Route path="/addRecord" element={<AddRecord />}></Route>
         </Routes>
       </Router>
     </AuthProvider>
