@@ -3,6 +3,24 @@ import RapportModel from '../models/Rapport';
 import RecordModel from '../models/Record'; 
 import { generatePdfReport } from '../controllers/GenerateRapport'; 
 import router from './Employee';
+import multer from 'multer';
+
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'records/');
+  },
+  filename: (req, file, cb) => {
+    const fileName = `${Date.now()}-${file.originalname}`;
+    cb(null, fileName);
+  },
+});
+
+const upload = multer({ storage });
+
+router.post('/upload', upload.single('file'), (req : Request, res : Response) => {
+  res.status(200).send('File uploaded successfully!');
+});
 
 router.post('/record', async (req: Request, res: Response) => {
   try {
@@ -100,5 +118,7 @@ router.delete('/records/:id', async (req: Request, res: Response) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+
 
 export default router;
