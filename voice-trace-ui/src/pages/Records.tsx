@@ -21,6 +21,7 @@ import {
     Skeleton,
     useToast // Import useToast hook
 } from '@chakra-ui/react';
+import { AuthProvider } from '../AuthContext';
 
 const Records: React.FC = () => {
     const [records, setRecords] = useState<any[]>([]);
@@ -28,13 +29,13 @@ const Records: React.FC = () => {
     const toast = useToast(); // Initialize useToast hook
     
     const fetchRecords = async () => {
-        const response = await axios.get('http://localhost:3000/auth/records');
+        const response = await axios.get('http://localhost:5000/auth/records');
         const records = response.data;
         // get the employee for each record
         for (let i = 0; i < records.length; i++) {
             const record = records[i];
             const employeeId = record.employee;
-            const employeeResponse = await axios.get(`http://localhost:3000/auth/employees/${employeeId}`);
+            const employeeResponse = await axios.get(`http://localhost:5000/auth/employees/${employeeId}`);
             const employee = employeeResponse.data;
             record.employee = employee;
         }
@@ -43,7 +44,7 @@ const Records: React.FC = () => {
     };
     // on click on view report button get the data from api and inject it into a new page (/report)
     const viewReport = async (recordId: string) => {
-        const newWindow = window.open('/reports/' + recordId, '_blank', 'noopener,noreferrer')
+        const newWindow = window.open('/report/' + recordId, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
 
     }
@@ -53,7 +54,7 @@ const Records: React.FC = () => {
     }, []);
     
     return (
-        <Container maxW='950px'>
+        <Container maxW='950px' mt={5} bg='white' color='black' style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Heading
                 as="h1"
                 size="xl"
@@ -62,7 +63,7 @@ const Records: React.FC = () => {
                 my={5}
             >Records</Heading>
             <Text fontSize='md' textAlign="center" >From here you can see all the records of the employees</Text>
-            <Divider  my={5} />
+            <Divider  mx={10} my={5} />
             {loading ? ( // Render skeleton loading component while data is being fetched
                 <Table variant="striped">
                     <Thead>
@@ -135,6 +136,7 @@ const Records: React.FC = () => {
                 </Table>
             )}
         </Container>
+    
     );
 };
 

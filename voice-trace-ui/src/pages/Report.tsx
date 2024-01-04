@@ -14,11 +14,11 @@ const Conversation = () => {
   const [summary, setSummary] = useState<any[]>([]);
 
   const fetchReport = async () => {
-    // post req with id in body request to get report
-    const response = await axios.get('http://localhost:3000/auth/reports');
+    const response = await axios.post('http://localhost:5000/auth/report', {
+      id: id
+    });
     setMessages(response.data.Messages);
     setSummary(response.data.Summary);
-
     setLoading(false);
   }
   useEffect(() => {

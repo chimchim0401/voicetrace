@@ -27,7 +27,7 @@ const FindUser: React.FC = () => {
 
   const getEMployees = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/auth/employees`);
+      const response = await axios.get(`http://localhost:5000/auth/employees`);
 
       setUsersInfos(response.data);
       return;
@@ -41,7 +41,7 @@ const FindUser: React.FC = () => {
 
   const getSpecificEMployees = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/auth/employees`);
+      const response = await axios.get(`http://localhost:5000/auth/employees`);
 
 
       setSpecificUsersInfos(response.data);
@@ -57,7 +57,7 @@ const FindUser: React.FC = () => {
 
   const getAdmin = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/getAdmin`);
+      const response = await axios.get(`http://localhost:5000/getAdmin`);
 
       setAdminInfos(response.data);
 
@@ -118,7 +118,7 @@ const FindUser: React.FC = () => {
   const handleDelete= async (id:string) => {
     
     try{
-      const response= axios.delete(`http://localhost:3000/auth/employees/delete/${id}`) ;
+      const response= axios.delete(`http://localhost:5000/auth/employees/delete/${id}`) ;
       toast.success('Employee deleted successfully', {
         position: 'bottom-right',
         autoClose: 3000, // Ferme l'alerte après 3 secondes

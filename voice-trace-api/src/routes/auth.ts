@@ -33,8 +33,8 @@ router.get('/records', async (req: Request, res: Response) => {
 
 
 
-router.get('/reports', async (req: Request, res: Response) => {
-    const id = req.body.id;
+router.post('/report', async (req: Request, res: Response) => {
+    const { id } = req.body;
     try {
         // find report by Record(ObjectId) id
         const report = await RapportModel.findOne({ Record: id });
@@ -47,5 +47,6 @@ router.get('/reports', async (req: Request, res: Response) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 });
+
 
 export default router;

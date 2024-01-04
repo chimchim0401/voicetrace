@@ -22,7 +22,7 @@ function ResetPass() {
       } 
   
       try {
-        const response = await axios.post('http://localhost:3000/auth/verifyEmail', {
+        const response = await axios.post('http://localhost:5000/auth/verifyEmail', {
           email,
         });
   

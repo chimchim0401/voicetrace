@@ -20,7 +20,7 @@ const UpdateEmployee: React.FC = () => {
 
   useEffect(() => {
     
-    axios.get(`http://localhost:3000/auth/employees/${id}`).then((response) => {
+    axios.get(`http://localhost:5000/auth/employees/${id}`).then((response) => {
       const employeeData = response.data;
       setFormData({
         firstname: employeeData.firstname,
@@ -43,7 +43,7 @@ const UpdateEmployee: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:3000/auth/employees/update/${id}`, formData);
+      const response = await axios.put(`http://localhost:5000/auth/employees/update/${id}`, formData);
       console.log(response.data);
       toast.success('Employee updated successfully', {
         position: 'bottom-right',

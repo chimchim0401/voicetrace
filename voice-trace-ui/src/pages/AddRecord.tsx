@@ -18,7 +18,7 @@ function AddRecord() {
           formData.append('file', SelectedRecord);
     
           try {
-            await axios.post('http://localhost:3000/upload', formData);
+            await axios.post('http://localhost:5000/upload', formData);
             alert('Fichier téléchargé avec succès !');
           } catch (error) {
             console.error('Erreur lors du téléchargement du fichier :', error);

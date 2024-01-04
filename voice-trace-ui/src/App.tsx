@@ -15,10 +15,12 @@ import FindUser from './pages/FindUser';
 import Records from './pages/Records';
 import Report from './pages/Report';
 import AddRecord from './pages/AddRecord';
+import { ChakraBaseProvider } from '@chakra-ui/react';
 
 
 function App() {
   return (
+    <ChakraBaseProvider>
     <AuthProvider>
       <Router>
         <Routes>
@@ -30,11 +32,12 @@ function App() {
           <Route path="/employees/add" element={<AddEmployee />}></Route>
           <Route path="/employees/update/:id" element={<UpdateEmployee />}></Route>
           <Route path="/records" element={<Records />}></Route>
-          <Route path="/report" element={<Report />}></Route>
+          <Route path="/report/:id" element={<Report />}></Route>
           <Route path="/addRecord" element={<AddRecord />}></Route>
         </Routes>
       </Router>
     </AuthProvider>
+    </ChakraBaseProvider>
   );
 }
 

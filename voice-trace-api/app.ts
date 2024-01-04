@@ -7,7 +7,7 @@ import multer from 'multer';
 import transcribe from "./ai/text-diar";
 
 
-const PORT = 3000;
+const PORT = 5000;
 
 const app= express();
 
@@ -53,7 +53,7 @@ app.post('/upload',
 
 
 
-mongoose.connect('mongodb+srv://root:root@cluster0.j19swfd.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect('mongodb+srv://chzarhane:dirolabasedialkom@cluster0.tyhxavy.mongodb.net/?retryWrites=true&w=majority'
 ).then(()=>{
     console.log('connection done');
     app.listen(PORT);

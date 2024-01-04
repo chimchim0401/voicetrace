@@ -4,7 +4,6 @@ import cors from 'cors';
 
 import employeeRoutes from './routes/Employee';
 import recordRoutes from './routes/Record';
-import RapportRoutes from './routes/Rapport';
 
 
 
@@ -21,7 +20,6 @@ app.use(
 
 app.use('/', employeeRoutes);
 app.use('/', recordRoutes);
-app.use('/', RapportRoutes);
 
 const mongodbUri = process.env.MONGODB_URI;
 
