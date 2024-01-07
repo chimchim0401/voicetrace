@@ -12,6 +12,7 @@ const Conversation = () => {
   const toast = useToast();
   const [messages, setMessages] = useState<any[]>([]);
   const [summary, setSummary] = useState<any[]>([]);
+  const [agent, setAgent] = useState('Agent');
 
   const fetchReport = async () => {
     const response = await axios.post('http://localhost:5000/auth/report', {
@@ -19,6 +20,15 @@ const Conversation = () => {
     });
     setMessages(response.data.Messages);
     setSummary(response.data.Summary);
+    const recintrem = await axios.get('http://localhost:5000/auth/records/');
+    for (let i = 0; i < recintrem.data.length; i++) {
+      if (recintrem.data[i]._id === response.data.Record) {
+        const interm = await axios.get('http://localhost:5000/auth/employees/' + recintrem.data[i]._id);
+        //setAgent(interm.data.firstname + ' ' + interm.data.lastname);
+        break;
+      }
+    }
+    
     setLoading(false);
   }
   useEffect(() => {
@@ -46,12 +56,12 @@ const Conversation = () => {
                 key={message.id}
                 p={3}
                 borderRadius="md"
-                alignSelf={message.user.role === 'Client' ? 'flex-start' : 'flex-end'}
-                ml={message.user.role === 'Client' ? '0' : 'auto'}
-                mr={message.user.role === 'Client' ? 'auto' : '0'}
-                bg={message.user.role === 'Client' ? '#D7E5CA' : '#D2E0FB'}
+                alignSelf={message.speaker === 'A' ? 'flex-start' : 'flex-end'}
+                ml={message.speaker === 'A' ? '0' : 'auto'}
+                mr={message.speaker === 'A' ? 'auto' : '0'}
+                bg={message.speaker === 'A' ? '#8EACCD' : '#E2E8F0'}
               >
-                <Text fontWeight="bold">{message.user.name}</Text>
+                <Text fontWeight="bold">{message.speaker === 'A' ? agent : 'Customer'}</Text>
                 <Text>{message.text}</Text>
               </Box>
             ))

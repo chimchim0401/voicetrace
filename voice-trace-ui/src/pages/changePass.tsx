@@ -32,7 +32,7 @@ function ChangePass(){
       if (confPassword === password) {
      
       try {
-        const response = await axios.post('http://localhost:5000/auth/ChangePass', {
+        const response = await axios.post('http://localhost:3000/auth/ChangePass', {
           email,
           password,
         });
@@ -57,12 +57,13 @@ function ChangePass(){
 
 
   return (
-    <div className='container containerLogin'>
-      <p className='title'>choisir un nouveau mot de passe</p>
+    <div className="containerDiv" >
+    <div className='containerLogin'>
+      <p className='title'>Choisir un nouveau mot de passe</p>
       <div className='inputStyle'>
       <input
         type={showPass ? "text"  : "password" }
-        placeholder="Mot de passe"
+        placeholder="Nouveau mot de passe"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
@@ -71,7 +72,7 @@ function ChangePass(){
       <div className='inputStyle'>
       <input
         type={showPass ? "text"  : "password" }
-        placeholder="Mot de passe"
+        placeholder="Confirmer le nouveau mot de passe"
         value={confPassword}
         onChange={(e) => setConfPassword(e.target.value)}
       />
@@ -80,6 +81,7 @@ function ChangePass(){
       <button className='buttonStyle'onClick={() => { handleChangePass(); setShowMsg(true); }}>Modifier</button><br />
       
       {showMsg? <p className='errorStyle' >{msgErreur}</p> :  <p></p> }
+    </div>
     </div>
   );
 };

@@ -8,15 +8,9 @@ const rapportSchema = new mongoose.Schema({
   },
   Messages: [
     {
-      user: {
-        name: {
-          type: String,
-          required: true
-        },
-        role: {
-          type: String,
-          required: true
-        }
+      speaker: {
+        type: String,
+        required: true
       },
       text: {
         type: String,

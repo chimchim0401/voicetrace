@@ -1,13 +1,17 @@
-.divCon{
+/* styles.css */
+
+/* Container styles */
+.divCon {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 5%;
-}
-
-.divCon button {
-    border : 1px solid rgb(97, 193, 97);
+  }
+  
+  /* Button styles */
+  .divCon button {
+    border: 1px solid rgb(97, 193, 97);
     background-color: rgb(97, 193, 97);
     padding: 12px;
     font-size: 16px;
@@ -15,5 +19,13 @@
     color: white;
     width: 220px;
     border-radius: 10px;
-    margin-top: 40px;
-}
+    margin-top: 20px; /* Adjusted margin for better spacing */
+  }
+  
+  /* Title styles */
+  .titleStyle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+  }
+  

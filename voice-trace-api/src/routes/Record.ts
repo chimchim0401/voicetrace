@@ -67,6 +67,18 @@ router.get('/records', async (req: Request, res: Response) => {
     res.status(500).json({ error: err.message });
   }
 });
+router.get('/getrecord/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const record = await RecordModel.findById(id);
+    if (!record) {
+      return res.status(404).json({ error: 'Record not found' });
+    }
+    res.json(record);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 router.put('/records/:id', async (req: Request, res: Response) => {
   try {
